@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 // import Private  from './components/Routing/Private';
 import { Login, Account, Forgot, Reset, Winning, Leader, Verify,
@@ -10,7 +10,6 @@ function App() {
   return (
     <div>
       <Router>
-        <Switch>
           <Route path = "/" exact component = { () => <Login />}/>
           <Route path = "/account" exact component = { () => <Account />}/>
           <Route path = "/forgotpassword" exact component = { () => <Forgot />}/>
@@ -25,7 +24,6 @@ function App() {
           <Route path = "/created" exact component = { () => <Created />}/>
           <Route path = "/changes" exact component = { () => <Changes />}/>
           <Route path = "/predictions" exact component = { () => <Predictions />}/>
-        </Switch>
       </Router>
     </div>
   );

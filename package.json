@@ -2,7 +2,7 @@
   "name": "dg",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://peaceful-river-81778.herokuapp.com",
+  "proxy": "https://peaceful-river-81778.herokuapp.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },

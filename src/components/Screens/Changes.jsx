@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 function Changes() {
     return(
@@ -23,4 +23,4 @@ function Changes() {
     )
 }
 
-export default withRouter(Changes)
+export default Changes

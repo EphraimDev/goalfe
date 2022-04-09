@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 function Account({ history }) {
 
@@ -56,4 +56,4 @@ function Account({ history }) {
     )
 }
 
-export default withRouter(Account)
+export default Account

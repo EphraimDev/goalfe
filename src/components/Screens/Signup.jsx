@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import axios from 'axios';
 
 function Signup({ history }) {
@@ -122,4 +122,4 @@ function Signup({ history }) {
     </div>
 }
 
-export default withRouter(Signup)
+export default Signup

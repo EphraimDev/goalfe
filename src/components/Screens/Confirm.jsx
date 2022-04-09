@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 function Confirm({ history }) {
 
@@ -11,4 +11,4 @@ function Confirm({ history }) {
     );
 }
 
-export default withRouter(Confirm);
+export default Confirm

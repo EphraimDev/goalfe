@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import axios from 'axios';
 
 function Forgot() {
@@ -41,4 +41,4 @@ function Forgot() {
     </div>  
 }
 
-export default withRouter(Forgot)
+export default Forgot

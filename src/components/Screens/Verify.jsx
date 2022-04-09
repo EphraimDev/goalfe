@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 function Verify(){
     return(
@@ -18,4 +18,4 @@ function Verify(){
     );
 }
 
-export default withRouter(Verify);
+export default Verify

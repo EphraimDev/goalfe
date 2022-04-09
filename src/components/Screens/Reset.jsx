@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 function Reset({ match }) {
 
@@ -74,4 +74,4 @@ function Reset({ match }) {
     </div>
 }
 
-export default withRouter(Reset)
+export default Reset

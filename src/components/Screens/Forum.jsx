@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import axios from 'axios';
 
 function Forum({ history }) {
@@ -58,4 +58,4 @@ function Forum({ history }) {
     );
 }
 
-export default withRouter(Forum);
+export default Forum

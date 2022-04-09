@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import axios from 'axios';
 
 function Created({ history }) {
@@ -71,4 +71,4 @@ function Created({ history }) {
     );
 }
 
-export default withRouter(Created);
+export default Created

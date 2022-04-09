@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 function Result() {
     return(
@@ -17,4 +17,4 @@ function Result() {
     )
 }
 
-export default withRouter(Result)
+export default Result

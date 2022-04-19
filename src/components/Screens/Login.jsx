@@ -55,7 +55,7 @@ function Login({ history }) {
 
     return <div>
         <h1>
-            Decimal gods
+            Emmanuel Jacob
         </h1> 
         {error && <span>{error}</span>}<br /><br />
         Username: <input type="text" placeholder ="Username"

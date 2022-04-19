@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link,  } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 
 function Create({ history }) {
@@ -86,8 +86,8 @@ function Create({ history }) {
                     message:input.message,
                 }
                 
-                await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create`, predict, config)
-                                        
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create`, predict, config)
+                
                 history.push('/created');
     
             }else{
@@ -131,4 +131,4 @@ function Create({ history }) {
     );
 }
 
-export default Create
+export default withRouter (Create)

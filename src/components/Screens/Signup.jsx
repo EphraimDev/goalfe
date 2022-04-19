@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link,  } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 
 function Signup({ history }) {
@@ -85,7 +85,7 @@ function Signup({ history }) {
 
                 localStorage.setItem('authToken', response.data.token);
                                                         
-                history.push('/confirm');
+                history.push('/forum');
 
             } catch (error) {
                 setError(error.response.data.error)
@@ -113,6 +113,7 @@ function Signup({ history }) {
             name="email" onChange={handleChange} value={input.email} /><br /> <br />
             Phone: <input type="text" placeholder="Phone"
             name="phone" onChange={handleChange} value={input.phone} /><br /> <br />
+            <Link to = "/"><button className="btn">Go Back</button></Link>
             <button onClick={(e) => handleClick(e)} className="btn">Register</button>
         </form> <br /> <br />
         <small>
@@ -122,4 +123,4 @@ function Signup({ history }) {
     </div>
 }
 
-export default Signup
+export default withRouter (Signup)

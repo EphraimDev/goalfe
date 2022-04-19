@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link,  } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 
 function Forum({ history }) {
@@ -22,10 +22,11 @@ function Forum({ history }) {
 
     const getUserProfile = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/account`, config)
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/forum`, config)
 
             if(response.status===200){
                 setUsername(response.data.username)
+                console.log(response.data);
             }
         } catch (error) {
             localStorage.removeItem('authToken');
@@ -58,4 +59,4 @@ function Forum({ history }) {
     );
 }
 
-export default Forum
+export default withRouter (Forum)

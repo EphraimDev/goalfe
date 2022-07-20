@@ -24,10 +24,8 @@ function Forum({ history }) {
         try {
             const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/forum`, config)
 
-            if(response.status===200){
-                setUsername(response.data.username)
-                console.log(response.data);
-            }
+            setUsername(response.data.username)
+            
         } catch (error) {
             localStorage.removeItem('authToken');
             history.push('/')

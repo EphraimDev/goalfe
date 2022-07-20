@@ -9,7 +9,7 @@ function Forgot() {
     const [success, setSuccess] = useState('');
 
     async function handleClick(e){
-        e.preDefault();
+        //e.preDefault();
 
         const config = {
             header:{

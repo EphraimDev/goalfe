@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Link,  } from "react-router-dom";
 
-function Verify(){
-    return(
-        <div>
-            <Link to = "/forum">
-                <h1>
-                    Decimal Gods
-                </h1>
-            </Link>
-            Green Tick (Verified) <br /><br />
-            <Link>Winning 1</Link><br />
-            <Link>Winning 2</Link><br /><br />
-            <Link to = "/forum"><button type="button" class="btn">Home</button></Link>
-            <Link to = "/"><button type="button" class="btn">Log Out</button></Link>
-        </div>
-    );
+function Verify({ match }){
+
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    try {
+        const response = axios.post(`${process.env.REACT_APP_BACKEND_URL}
+        /verify/${match.params.confirmAccountToken}`)
+        
+        
+
+    } catch (error) {
+        
+    }
+
+    return <div>
+        <h3> Account Verification</h3>
+        {error && <span>{error}</span>}
+        {success && (
+        <span>{success}<Link to = "/login">Login</Link></span>
+        )}
+    </div>
 }
 
 export default Verify

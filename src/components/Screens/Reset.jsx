@@ -44,7 +44,7 @@ function Reset({ match }) {
         }
 
         try {
-            const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/forgotpassword/${match.params.resetToken}`, input.password, config)
+            const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/resetpassword/${match.params.resetToken}`, input.password, config)
             
             console.log(response)
 

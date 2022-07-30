@@ -1,5 +1,4 @@
 import { Redirect, Route } from "react-router-dom";
-
 const Private = ({component: Component, ...rest}) =>{
     return(
         <Route

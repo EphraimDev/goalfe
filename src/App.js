@@ -2,9 +2,8 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-// import Private  from './components/Routing/Private';
 import { Login, Account, Forgot, Reset, Winning, Leader, Verify,
-Signup, Create, Forum, Thread, Created, Changes, Predictions } from "./components";
+Signup, Create, Forum, Thread, Created, Changes, Predictions, Confirm, Exam } from "./components";
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
           <Route path = "/passwordreset/:resetToken" exact component = { () => <Reset />}/>
           <Route path = "/winning" exact component = { () => <Winning />}/>
           <Route path = "/leader" exact component = { () => <Leader />}/>
-          <Route path = "/verify" exact component = { () => <Verify />}/>
+          <Route path = "/verify/:confirmToken" exact component = { () => <Verify />}/>
           <Route path = "/signup" exact component = { () => <Signup />}/>
           <Route path = "/create" exact component = { () => <Create />}/>
           <Route path = "/forum" exact component = { () => <Forum />}/>
@@ -25,6 +24,8 @@ function App() {
           <Route path = "/created" exact component = { () => <Created />}/>
           <Route path = "/changes" exact component = { () => <Changes />}/>
           <Route path = "/predictions" exact component = { () => <Predictions />}/>
+          <Route path = "/confirm" exact component = { () => <Confirm />}/>
+          <Route path = "/exam" exact component = { () => <Exam />}/>
         </Switch>
       </Router>
     </div>

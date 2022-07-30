@@ -67,7 +67,7 @@ function Login({ history }) {
         <small>
         <Link to= "/signup">New Here? Sign Up </Link><br /> <br />
         <Link to = "/">Login</Link>|   AboutUs|     info@cbt.com|    08133050899|     
-        13, Ikate, Lekki Phase I, Lagos, Nigeria|   FAQ|    Privacy Policy|   Terms of Service| © Jacob 2021
+        13, Ikate, Lekki Phase I, Lagos, Nigeria|   FAQ|    Privacy Policy|   Terms of Service| © Jacob 2022 
         </small>
     </div>
 }

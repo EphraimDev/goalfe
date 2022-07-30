@@ -85,7 +85,7 @@ function Signup({ history }) {
 
                 localStorage.setItem('authToken', response.data.token);
                                                         
-                history.push('/forum');
+                history.push('/confirm');
 
             } catch (error) {
                 setError(error.response.data.error)
@@ -111,7 +111,7 @@ function Signup({ history }) {
             name="confirmPassword" onChange={handleChange} value={input.confirmPassword}/><br /> <br />
             Email: <input type="email" placeholder="Email"
             name="email" onChange={handleChange} value={input.email} /><br /> <br />
-            Phone: <input type="text" placeholder="Phone"
+            Phone: <input type="tel" placeholder="Phone"
             name="phone" onChange={handleChange} value={input.phone} /><br /> <br />
             <Link to = "/"><button className="btn">Go Back</button></Link>
             <button onClick={(e) => handleClick(e)} className="btn">Register</button>

@@ -1,5 +1,3 @@
-// export { default as Private } from "./Routing/Private";
-
 export { default as Login } from "./Screens/Login";
 export { default as Thread } from "./Screens/Thread";
 export { default as Account } from "./Screens/Account";
@@ -14,3 +12,5 @@ export { default as Predictions } from "./Screens/Predictions";
 export { default as Created } from "./Screens/Created";
 export { default as Changes } from "./Screens/Changes";
 export { default as Reset } from "./Screens/Reset";
+export { default as Confirm } from "./Screens/Confirm";
+export { default as Exam } from "./Screens/Exam";

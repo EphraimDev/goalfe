@@ -5,8 +5,7 @@ function Confirm({ history }) {
 
     return(
         <div>
-            Click on link sent to your mail to confirm your account
-            <Link to= "/forum"><label class="completed"></label> <br /> <br /></Link>
+            <p>Click on link sent to your mail to confirm your account</p>
         </div>
     );
 }

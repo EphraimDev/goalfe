@@ -1,18 +1,20 @@
 import React from 'react';
-//import { Link,  } from "react-router-dom";
+import axios from 'axios';
 
 function Exam(){
-    return(
-        <div>
-            <h1>
-                ACi <br /><br />
-            </h1>
-            <small>
-            Previous    Next <br />
-                pages <br /><br />
-            </small>
-        </div>
-    );
+
+    let email
+
+    async function handleClick(event){
+        event.preventDefault();
+
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/exam`, email)
+    }
+
+    return <div><br />
+        Enter Email: <input type="email" />
+        <button onClick={(e) => handleClick(e)}>Send Mail</button>
+    </div>
 }
 
 export default Exam;

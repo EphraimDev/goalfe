@@ -5,8 +5,9 @@ import { Link, useParams, withRouter } from "react-router-dom";
 function Verify({ history }) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [user, setUser] = useState(null);
+  const [status, setStatus] = useState("");
   const params = useParams();
-  console.log(history)
   useEffect(() => {
     verifyToken();
   }, []);
@@ -15,15 +16,51 @@ function Verify({ history }) {
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/verify/${params.confirmToken}`
       );
-      if(response.status === 200){
-        setSuccess(response.data)
+      if (response.status === 200) {
+        setSuccess(response.data.message);
+        setStatus("LOGIN");
       }
     } catch (error) {
-      console.log(error);
-      if(error.response && error.response.data){
-        setError(error.response.data)
+      if (error.response) {
+        if (error.response.status === 401) {
+          setError(error.response.data.message);
+          setStatus("REGISTER");
+          return;
+        }
+        if (error.response.data) {
+          setError(error.response.data.message);
+          setUser(error.response.data.data);
+        }
       } else {
-        setError(error.message)
+        setError(error.message);
+      }
+    }
+  };
+
+  const resendToken = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      if (!user || (user && !user.email)) {
+        setError("User does not have a valid email");
+        return;
+      }
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/resend-link`,
+        { email: user.email }
+      );
+      if (response.status === 200) {
+        setSuccess(response.data.message);
+        if (response.data.message === "Email Sent") {
+          history.push("/confirm");
+        }
+        setStatus("LOGIN");
+      }
+    } catch (error) {
+      if (error.response && error.response.data) {
+        setError(error.response.data.message);
+      } else {
+        setError(error.message);
       }
     }
   };
@@ -31,15 +68,21 @@ function Verify({ history }) {
   return (
     <div>
       <h3> Account Verification</h3>
-      {error && <span>{error}</span>}
-      {success && (
-        <span>
-          {success}
-          <Link to="/">Login</Link>
-        </span>
+      {error && (
+        <div>
+          <p>
+            <span>{error}</span>
+          </p>
+          {user && <button onClick={(e) => resendToken(e)}>Resend</button>}
+        </div>
       )}
+      {success && <span>{success}</span>}
+      <p>
+        {status === "LOGIN" && <Link to="/">Login</Link>}
+        {status === "REGISTER" && <Link to="/signup">Sign Up</Link>}
+      </p>
     </div>
   );
 }
 
-export default withRouter (Verify)
+export default withRouter(Verify);

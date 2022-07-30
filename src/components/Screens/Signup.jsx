@@ -83,7 +83,7 @@ function Signup({ history }) {
                 
                 const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, registered, config)
 
-                localStorage.setItem('authToken', response.data.token);
+                // localStorage.setItem('authToken', response.data.token);
                                                         
                 history.push('/confirm');
 
